@@ -1,0 +1,75 @@
+{
+    "name": "Thrift",
+    "scopeName": "source.thrift",
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#types"
+        }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.double-slash.thrift",
+                    "match": "//.*$"
+                },
+                {
+                    "name": "comment.line.number-sign.thrift",
+                    "match": "#.*$"
+                },
+                {
+                    "name": "comment.block.thrift",
+                    "begin": "/\\*",
+                    "end": "\\*/"
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.thrift",
+                    "match": "\\b(namespace|include|const|typedef|enum|struct|service|exception|throws|extends|required|optional|oneway)\\b"
+                }
+            ]
+        },
+        "strings": {
+            "name": "string.quoted.double.thrift",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.thrift",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.thrift",
+                    "match": "\\b[0-9]+\\b"
+                }
+            ]
+        },
+        "types": {
+            "patterns": [
+                {
+                    "name": "storage.type.thrift",
+                    "match": "\\b(void|bool|byte|i16|i32|i64|double|string|binary|map|list|set)\\b"
+                }
+            ]
+        }
+    }
+}

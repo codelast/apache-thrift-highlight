@@ -1,0 +1,43 @@
+{
+    "name": "thrift-highlight",
+    "displayName": "Thrift Syntax Highlighter",
+    "description": "Syntax highlighting for Apache Thrift IDL files",
+    "version": "0.0.1",
+    "icon": "icon.png",
+    "publisher": "codelast",
+    "license": "MIT",
+    "author": {
+        "name": "Darran Zhang"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/codelast/apache-thrift-highlight"
+    },
+    "keywords": [
+        "thrift",
+        "apache thrift",
+        "syntax",
+        "highlight",
+        "syntax highlighting",
+        "language"
+    ],
+    "engines": {
+        "vscode": "^1.74.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "thrift",
+            "aliases": ["Thrift", "thrift"],
+            "extensions": [".thrift"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "thrift",
+            "scopeName": "source.thrift",
+            "path": "./syntaxes/thrift.tmLanguage.json"
+        }]
+    }
+}
